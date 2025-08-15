@@ -409,6 +409,7 @@ require("lazy").setup({
                 sort_by = "case_sensitive",
                 view = {
                     width = 30,
+                    side = 'right',
                 },
                 renderer = {
                     group_empty = true,
@@ -517,7 +518,7 @@ vim.diagnostic.config({
         prefix = "●",
         format = function(diagnostic)
             local code = diagnostic.code or
-            (diagnostic.user_data and diagnostic.user_data.lsp and diagnostic.user_data.lsp.code)
+                (diagnostic.user_data and diagnostic.user_data.lsp and diagnostic.user_data.lsp.code)
             if code then
                 return string.format("%s [%s]", diagnostic.message, code)
             end
