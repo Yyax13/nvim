@@ -328,7 +328,7 @@ require("lazy").setup({
                         {
                             "encoding",
                             cond = function()
-                                return vim.bo.encoding ~= "utf-8"
+                                return vim.opt.encoding:get() ~= "utf-8"
                             end
                         },
                         "fileformat",
