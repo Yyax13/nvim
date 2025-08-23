@@ -69,24 +69,23 @@ require("lazy").setup({
     -- COLORSCHEME
     -- ========================================================================
     {
-        "folke/tokyonight.nvim",
+        "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            require("tokyonight").setup({
-                style = "night",
+            require("onedark").setup({
+                style = "deep",  -- escolhe o estilo que curtir: dark, darker, cool, deep, warm, warmer
                 transparent = false,
-                terminal_colors = true,
-                styles = {
-                    comments = { italic = true },
-                    keywords = { italic = true },
-                    functions = {},
-                    variables = {},
-                    sidebars = "dark",
-                    floats = "dark",
+                term_colors = true,
+                code_style = {
+                    comments = "italic",
+                    keywords = "italic",
+                    functions = "italic",
+                    strings = "none",
+                    variables = "none",
                 },
             })
-            vim.cmd.colorscheme("tokyonight")
+            require("onedark").load()
         end,
     },
 
@@ -280,7 +279,7 @@ require("lazy").setup({
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "tokyonight",
+                    theme = "onedark",
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                     disabled_filetypes = {
