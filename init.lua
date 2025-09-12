@@ -31,7 +31,7 @@ vim.g.maplocalleader = " "
 -- Line breaking
 vim.opt.wrap = true
 vim.opt.linebreak = true
-vim.opt.breakident = true
+vim.opt.breakindent = true
 
 -- Configurações gerais
 vim.opt.number = true
