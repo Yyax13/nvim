@@ -28,6 +28,11 @@ vim.o.guicursor = 'a:hor25,i:ver25'
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Line breaking
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakident = true
+
 -- Configurações gerais
 vim.opt.number = true
 vim.opt.relativenumber = true
