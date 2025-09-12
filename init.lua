@@ -21,6 +21,9 @@ vim.opt.rtp:prepend(lazypath)
 -- CONFIGURAÇÕES BÁSICAS
 -- ============================================================================
 
+-- Cursor format
+vim.o.guicursor = 'a:hor25,i:ver25'
+
 -- Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
