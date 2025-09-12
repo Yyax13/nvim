@@ -49,7 +49,7 @@ vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
 vim.opt.cmdheight = 1
 vim.opt.pumheight = 10
-vim.opt.showtabline = 2
+vim.opt.showtabline = 4
 vim.opt.laststatus = 3
 vim.opt.showcmd = false
 vim.opt.ruler = false
@@ -74,8 +74,8 @@ require("lazy").setup({
         priority = 1000,
         config = function()
             require("onedark").setup({
-                style = "deep",  -- escolhe o estilo que curtir: dark, darker, cool, deep, warm, warmer
-                transparent = false,
+                style = "deep", -- escolhe o estilo que curtir: dark, darker, cool, deep, warm, warmer
+                transparent = true,
                 term_colors = true,
                 code_style = {
                     comments = "italic",
@@ -812,14 +812,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
     group = highlight_group,
     pattern = "*",
-})
-
--- Auto format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.lua,*.js,*.ts,*.jsx,*.tsx,*.py,*.go,*.rs,*.c,*.cpp,*.java",
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end,
 })
 
 print("✅ Configuração do Neovim carregada com sucesso!")
