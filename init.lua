@@ -33,6 +33,9 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 
+-- Clipboard
+vim.opt.clipboard = "unnamedplus" -- Yanke and paste using system's clipboard
+
 -- Configurações gerais
 vim.opt.number = true
 vim.opt.relativenumber = true
