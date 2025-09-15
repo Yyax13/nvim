@@ -81,7 +81,7 @@ require("lazy").setup({
         priority = 1000,
         config = function()
             require("onedark").setup({
-                style = "deep", -- escolhe o estilo que curtir: dark, darker, cool, deep, warm, warmer
+                style = "cool", -- escolhe o estilo que curtir: dark, darker, cool, deep, warm, warmer
                 transparent = true,
                 term_colors = true,
                 code_style = {
