@@ -513,6 +513,50 @@ require("lazy").setup({
             require("nvim-web-devicons").setup()
         end
     },
+
+    {
+        "NvChad/nvim-colorizer.lua",
+        event = "VimEnter", -- Carrega o plugin após o Neovim iniciar para melhor performance
+        config = function()
+        require("colorizer").setup({
+            -- Configurações padrão para o colorizer
+            user_default_options = {
+            RGB = true,       -- #RGB hex codes
+            RRGGBB = true,    -- #RRGGBB hex codes
+            names = true,     -- Nomes de cores CSS como "red", "blue"
+            RRGGBBAA = true,  -- #RRGGBBAA hex codes (com transparência)
+            AARRGGBB = false, -- 0xAARRGGBB hex codes (menos comum, desativado por padrão)
+            rgb_fn = true,    -- Funções CSS rgb() e rgba()
+            hsl_fn = true,    -- Funções CSS hsl() e hsla()
+            css = true,       -- Habilita todas as funcionalidades CSS
+            css_fn = true,    -- Habilita todas as funções de cores CSS
+            mode = "background", -- Onde exibir a cor: "background" (fundo), "virtualtext" (texto virtual ao lado), "foreground" (cor do texto)
+            },
+            -- Tipos de arquivo onde o colorizer deve estar ativo
+            filetypes = {
+            "css",
+            "html",
+            "javascript",
+            "typescript",
+            "lua",
+            "scss",
+            "less",
+            "json",
+            "yaml",
+            "toml",
+            "php",
+            "vue",
+            "svelte",
+            "go",
+            "python",
+            -- Adicione outros tipos de arquivo conforme necessário onde você lida com cores
+            },
+            -- Excluir arquivos grandes para evitar lentidão
+            exclude_files = {},
+            -- Outras opções...
+        })
+        end,
+    },
 })
 
 -- ============================================================================
