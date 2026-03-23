@@ -415,6 +415,9 @@ require("lazy").setup({
         },
         config = function()
             require("nvim-tree").setup({
+                filesystem_watchers = {
+                    enable = true,
+                },
                 sort_by = "case_sensitive",
                 view = {
                     width = 30,
@@ -427,6 +430,12 @@ require("lazy").setup({
                     dotfiles = false,
                 },
             })
+
+            vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "FocusGained", "TermClose" }, {
+            callback = function()
+                require("nvim-tree.api").tree.reload()
+            end,
+        })
         end,
     },
 
